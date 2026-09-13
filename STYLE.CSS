@@ -1,0 +1,1362 @@
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    overflow: hidden;
+    color: #713047;
+}
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.home,
+.letter-page,
+.memories-page {
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255, 255, 255, 0.95),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(255, 174, 201, 0.7),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #fff5f8,
+            #ffe5ee,
+            #ffd5e2
+        );
+}
+
+/* =========================================
+   SCREEN
+========================================= */
+
+.screen {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    position: relative;
+    z-index: 5;
+}
+
+/* =========================================
+   FLOATING BACKGROUND HEARTS
+========================================= */
+
+.background-hearts {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+.background-hearts span {
+    position: absolute;
+
+    color: #ff9fba;
+
+    opacity: 0.35;
+
+    font-size: 25px;
+
+    animation:
+        floatAround
+        7s ease-in-out
+        infinite;
+}
+
+.background-hearts span:nth-child(1) {
+    left: 7%;
+    top: 18%;
+    animation-delay: 0s;
+}
+
+.background-hearts span:nth-child(2) {
+    left: 18%;
+    top: 75%;
+    animation-delay: 1s;
+}
+
+.background-hearts span:nth-child(3) {
+    left: 48%;
+    top: 8%;
+    animation-delay: 2s;
+}
+
+.background-hearts span:nth-child(4) {
+    left: 78%;
+    top: 20%;
+    animation-delay: 3s;
+}
+
+.background-hearts span:nth-child(5) {
+    left: 90%;
+    top: 72%;
+    animation-delay: 1.5s;
+}
+
+.background-hearts span:nth-child(6) {
+    left: 70%;
+    top: 88%;
+    animation-delay: 4s;
+}
+
+.background-hearts span:nth-child(7) {
+    left: 35%;
+    top: 90%;
+    animation-delay: 2.5s;
+}
+
+@keyframes floatAround {
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-25px)
+            rotate(8deg);
+    }
+}
+
+/* =========================================
+   HOME CARD
+========================================= */
+
+.home-card {
+    width: min(570px, 92vw);
+
+    text-align: center;
+
+    padding: 45px 40px;
+
+    background:
+        rgba(255, 255, 255, 0.78);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 38px;
+
+    box-shadow:
+        0 25px 70px rgba(161, 61, 93, 0.18);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    animation:
+        appear 0.9s ease;
+}
+
+.tiny-flower {
+    font-size: 45px;
+
+    margin-bottom: 8px;
+
+    animation:
+        flowerFloat
+        3s ease-in-out
+        infinite;
+}
+
+@keyframes flowerFloat {
+    0%,
+    100% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            rotate(8deg)
+            translateY(-5px);
+    }
+}
+
+.eyebrow {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    font-weight: bold;
+
+    color: #c95b78;
+
+    margin-bottom: 10px;
+}
+
+.home-card h1 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(43px, 8vw, 70px);
+
+    line-height: 0.95;
+
+    color: #8d3453;
+
+    margin-bottom: 15px;
+}
+
+.home-card h1 span {
+    color: #e75478;
+
+    font-style: italic;
+}
+
+.heart-divider {
+    color: #f17898;
+
+    margin-bottom: 18px;
+
+    font-size: 18px;
+}
+
+.home-message {
+    color: #815268;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+}
+
+.date-badge {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    background: #fff0f5;
+
+    color: #bd4f70;
+
+    font-size: 12px;
+
+    border: 1px solid #ffd0df;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.main-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-top: 22px;
+
+    padding: 14px 25px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f47b9d,
+            #d9436d
+        );
+
+    box-shadow:
+        0 10px 25px rgba(217, 67, 109, 0.25);
+
+    transition: 0.3s ease;
+}
+
+.main-button:hover {
+    transform:
+        translateY(-4px)
+        scale(1.02);
+
+    box-shadow:
+        0 15px 30px rgba(217, 67, 109, 0.35);
+}
+
+.main-button span {
+    font-size: 18px;
+}
+
+.main-button.small {
+    margin-top: 0;
+
+    padding: 10px 19px;
+
+    font-size: 12px;
+}
+
+.small-button {
+    padding: 10px 17px;
+
+    border-radius: 50px;
+
+    color: #9c4561;
+
+    background:
+        rgba(255, 255, 255, 0.7);
+
+    border:
+        1px solid #f3c1d0;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    transition: 0.3s;
+}
+
+.small-button:hover {
+    background: white;
+
+    transform:
+        translateY(-2px);
+}
+
+.bottom-note {
+    margin-top: 20px;
+
+    font-size: 10px;
+
+    color: #b27a8d;
+
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   MUSIC BUTTON
+========================================= */
+
+.music-button {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #d9436d;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    z-index: 100;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.12);
+
+    transition: 0.3s;
+}
+
+.music-button:hover {
+    transform:
+        scale(1.1)
+        rotate(10deg);
+}
+
+/* =========================================
+   LETTER PAGE
+========================================= */
+
+.letter-wrapper {
+    width: min(900px, 95vw);
+
+    animation:
+        appear 0.8s ease;
+}
+
+.letter-top {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 10px;
+
+    color: #c45172;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    font-weight: bold;
+}
+
+.letter-top span {
+    color: #f18aa5;
+
+    font-size: 20px;
+}
+
+/* =========================================
+   LETTER CARD
+========================================= */
+
+.letter-card {
+    display: grid;
+
+    grid-template-columns: 38% 62%;
+
+    height: min(570px, 78vh);
+
+    background: #fffaf9;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 70px rgba(120, 45, 70, 0.2);
+
+    transform: rotate(-0.3deg);
+}
+
+/* =========================================
+   LETTER IMAGE
+========================================= */
+
+.letter-image {
+    position: relative;
+
+    overflow: hidden;
+
+    background: #f3c8d5;
+}
+
+.letter-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.8s ease;
+}
+
+.letter-card:hover .letter-image img {
+    transform: scale(1.05);
+}
+
+.image-label {
+    position: absolute;
+
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+
+    padding: 9px;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255, 255, 255, 0.85);
+
+    color: #8e4a61;
+
+    font-size: 10px;
+}
+
+/* =========================================
+   LETTER PAPER
+========================================= */
+
+.letter-paper {
+    padding: 30px 38px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 28px,
+            rgba(220, 130, 150, 0.07) 29px
+        );
+
+    background-color: #fffdfb;
+}
+
+.letter-small {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #c05b76;
+
+    font-weight: bold;
+}
+
+.letter-paper h1 {
+    margin-top: 6px;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(28px, 4vw, 43px);
+
+    color: #8f3856;
+}
+
+.little-line {
+    color: #ed7898;
+
+    font-size: 18px;
+
+    margin: 4px 0 12px;
+}
+
+.letter-body {
+    font-family: Georgia, serif;
+
+    font-size: 13px;
+
+    line-height: 1.45;
+
+    color: #6d4655;
+}
+
+.letter-body p {
+    margin-bottom: 8px;
+}
+
+.letter-body strong {
+    color: #bd3f65;
+}
+
+.final-line {
+    color: #9d3c5c;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-top: 5px;
+}
+
+.signature {
+    margin-top: 10px;
+
+    font-family: cursive;
+
+    color: #b34a69;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navigation {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 14px;
+}
+
+/* =========================================
+   MEMORIES PAGE
+========================================= */
+
+.memories-wrapper {
+    width: min(1000px, 95vw);
+
+    text-align: center;
+
+    animation:
+        appear 0.8s ease;
+}
+
+.memories-title {
+    font-family: Georgia, serif;
+
+    color: #8d3453;
+
+    font-size:
+        clamp(35px, 6vw, 52px);
+
+    margin: 4px 0;
+}
+
+.memories-title span {
+    color: #e75478;
+
+    font-style: italic;
+}
+
+.memories-subtitle {
+    font-size: 12px;
+
+    color: #936073;
+
+    margin-bottom: 35px;
+}
+
+/* =========================================
+   HANGING POLAROIDS
+========================================= */
+
+.photo-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+
+    align-items: end;
+
+    position: relative;
+
+    padding-top: 35px;
+}
+
+/* -----------------------------------------
+   STRING
+----------------------------------------- */
+
+.polaroid::before {
+    content: "";
+
+    position: absolute;
+
+    width: 2px;
+
+    height: 42px;
+
+    top: -42px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #b88b78 0px,
+            #b88b78 5px,
+            transparent 5px,
+            transparent 8px
+        );
+
+    z-index: -1;
+}
+
+/* -----------------------------------------
+   CLOTHESPIN
+----------------------------------------- */
+
+.polaroid::after {
+    content: "📌";
+
+    position: absolute;
+
+    top: -13px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        rotate(-8deg);
+
+    font-size: 25px;
+
+    z-index: 5;
+
+    filter:
+        drop-shadow(
+            0 3px 3px
+            rgba(0,0,0,.15)
+        );
+}
+
+/* -----------------------------------------
+   POLAROID
+----------------------------------------- */
+
+.polaroid {
+    position: relative;
+
+    background: #ffffff;
+
+    padding:
+        10px
+        10px
+        16px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(130, 50, 80, 0.15);
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+
+    transform-origin:
+        50% -30px;
+
+    animation:
+        hangingPhoto
+        4.5s
+        ease-in-out
+        infinite;
+}
+
+/* -----------------------------------------
+   DIFFERENT PHOTO ANGLES
+----------------------------------------- */
+
+.photo-one {
+    transform:
+        rotate(-4deg);
+
+    animation-delay:
+        0s;
+}
+
+.photo-two {
+    transform:
+        rotate(3deg);
+
+    animation-delay:
+        -1.5s;
+}
+
+.photo-three {
+    transform:
+        rotate(-2deg);
+
+    animation-delay:
+        -3s;
+}
+
+/* -----------------------------------------
+   HANGING MOVEMENT
+----------------------------------------- */
+
+@keyframes hangingPhoto {
+
+    0% {
+        transform:
+            rotate(-4deg)
+            translateY(0);
+    }
+
+    20% {
+        transform:
+            rotate(-1deg)
+            translateY(-5px);
+    }
+
+    40% {
+        transform:
+            rotate(3deg)
+            translateY(-9px);
+    }
+
+    60% {
+        transform:
+            rotate(1deg)
+            translateY(-5px);
+    }
+
+    80% {
+        transform:
+            rotate(-3deg)
+            translateY(-2px);
+    }
+
+    100% {
+        transform:
+            rotate(-4deg)
+            translateY(0);
+    }
+}
+
+/* Different movement for each card */
+
+.photo-two {
+    animation-name:
+        hangingPhotoTwo;
+}
+
+@keyframes hangingPhotoTwo {
+
+    0% {
+        transform:
+            rotate(3deg)
+            translateY(0);
+    }
+
+    25% {
+        transform:
+            rotate(0deg)
+            translateY(-7px);
+    }
+
+    50% {
+        transform:
+            rotate(-3deg)
+            translateY(-11px);
+    }
+
+    75% {
+        transform:
+            rotate(1deg)
+            translateY(-5px);
+    }
+
+    100% {
+        transform:
+            rotate(3deg)
+            translateY(0);
+    }
+}
+
+.photo-three {
+    animation-name:
+        hangingPhotoThree;
+}
+
+@keyframes hangingPhotoThree {
+
+    0% {
+        transform:
+            rotate(-2deg)
+            translateY(0);
+    }
+
+    25% {
+        transform:
+            rotate(2deg)
+            translateY(-6px);
+    }
+
+    50% {
+        transform:
+            rotate(4deg)
+            translateY(-10px);
+    }
+
+    75% {
+        transform:
+            rotate(0deg)
+            translateY(-4px);
+    }
+
+    100% {
+        transform:
+            rotate(-2deg)
+            translateY(0);
+    }
+}
+
+/* -----------------------------------------
+   HOVER
+----------------------------------------- */
+
+.polaroid:hover {
+
+    animation-play-state:
+        paused;
+
+    transform:
+        rotate(0deg)
+        translateY(-18px)
+        scale(1.06) !important;
+
+    z-index: 20;
+
+    box-shadow:
+        0 25px 50px
+        rgba(130, 50, 80, 0.25);
+}
+
+/* =========================================
+   PHOTO
+========================================= */
+
+.photo {
+    height: 260px;
+
+    overflow: hidden;
+
+    background: #f4d5df;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.7s ease;
+}
+
+.polaroid:hover .photo img {
+    transform:
+        scale(1.08);
+}
+
+/* =========================================
+   POLAROID TEXT
+========================================= */
+
+.polaroid p {
+    margin-top: 10px;
+
+    font-family: cursive;
+
+    color: #9d3d5c;
+
+    font-size: 16px;
+}
+
+.polaroid small {
+    color: #ae8190;
+
+    font-size: 9px;
+}
+
+/* =========================================
+   POLAROID SHADOW
+========================================= */
+
+.polaroid .photo::after {
+    content: "";
+
+    position: absolute;
+
+    left: 15%;
+    right: 15%;
+
+    bottom: -15px;
+
+    height: 12px;
+
+    background:
+        rgba(120, 50, 75, 0.12);
+
+    filter:
+        blur(8px);
+
+    border-radius: 50%;
+}
+
+/* =========================================
+   FOREVER MESSAGE
+========================================= */
+
+.forever-message {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    margin:
+        35px
+        auto
+        12px;
+
+    padding:
+        12px
+        25px;
+
+    width: fit-content;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.7);
+
+    box-shadow:
+        0 8px 25px
+        rgba(130, 50, 80, 0.08);
+}
+
+.forever-heart {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffe1ea;
+
+    color: #e75478;
+
+    animation:
+        heartbeat
+        1.5s
+        infinite;
+}
+
+.forever-message h2 {
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+
+    color: #923a59;
+}
+
+.forever-message p {
+    font-size: 10px;
+
+    color: #a46c7d;
+
+    margin-top: 2px;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    20% {
+        transform: scale(1.15);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(1.1);
+    }
+}
+
+/* =========================================
+   GENERAL APPEAR ANIMATION
+========================================= */
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .screen {
+        padding: 10px;
+    }
+
+    /* HOME */
+
+    .home-card {
+        padding:
+            28px
+            22px;
+
+        border-radius: 30px;
+    }
+
+    .tiny-flower {
+        font-size: 34px;
+    }
+
+    .home-card h1 {
+        font-size: 43px;
+    }
+
+    .home-message {
+        font-size: 13px;
+    }
+
+    /* LETTER */
+
+    .letter-wrapper {
+        width: 96vw;
+    }
+
+    .letter-card {
+        display: block;
+
+        height: auto;
+
+        max-height: 78vh;
+
+        overflow: hidden;
+
+        transform: none;
+    }
+
+    .letter-image {
+        height: 150px;
+    }
+
+    .letter-paper {
+        padding:
+            18px
+            20px;
+
+        height:
+            calc(78vh - 150px);
+
+        justify-content:
+            flex-start;
+    }
+
+    .letter-paper h1 {
+        font-size: 28px;
+    }
+
+    .letter-body {
+        font-size: 11px;
+
+        line-height: 1.35;
+    }
+
+    .letter-body p {
+        margin-bottom: 6px;
+    }
+
+    .letter-small {
+        font-size: 8px;
+    }
+
+    .signature {
+        font-size: 11px;
+    }
+
+    /* MEMORIES */
+
+    .memories-wrapper {
+        width: 96vw;
+    }
+
+    .memories-title {
+        font-size: 35px;
+    }
+
+    .memories-subtitle {
+        font-size: 10px;
+
+        margin-bottom: 20px;
+    }
+
+    .photo-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 8px;
+
+        padding-top: 25px;
+    }
+
+    /* Shorter string */
+
+    .polaroid::before {
+        height: 28px;
+
+        top: -28px;
+    }
+
+    .polaroid::after {
+        font-size: 17px;
+
+        top: -10px;
+    }
+
+    .polaroid {
+        padding:
+            5px
+            5px
+            8px;
+    }
+
+    .photo {
+        height: 180px;
+    }
+
+    .polaroid p {
+        font-size: 10px;
+
+        margin-top: 5px;
+    }
+
+    .polaroid small {
+        font-size: 7px;
+    }
+
+    .forever-message {
+        margin:
+            20px
+            auto
+            10px;
+
+        padding:
+            8px
+            13px;
+    }
+
+    .forever-heart {
+        width: 30px;
+        height: 30px;
+    }
+
+    .forever-message h2 {
+        font-size: 12px;
+    }
+
+    .forever-message p {
+        font-size: 8px;
+    }
+
+    /* NAVIGATION */
+
+    .navigation {
+        margin-top: 8px;
+    }
+
+    .main-button.small,
+    .small-button {
+        font-size: 10px;
+
+        padding:
+            8px
+            13px;
+    }
+
+    /* MUSIC */
+
+    .music-button {
+        width: 40px;
+        height: 40px;
+
+        right: 12px;
+        bottom: 12px;
+
+        font-size: 18px;
+    }
+}
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .home-card h1 {
+        font-size: 36px;
+    }
+
+    .home-message {
+        font-size: 12px;
+    }
+
+    .photo {
+        height: 150px;
+    }
+
+    .polaroid p {
+        font-size: 8px;
+    }
+
+    .polaroid small {
+        display: none;
+    }
+
+    .letter-image {
+        height: 120px;
+    }
+
+    .letter-paper {
+        height:
+            calc(78vh - 120px);
+    }
+
+    .letter-body {
+        font-size: 10px;
+    }
+}
